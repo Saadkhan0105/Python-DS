@@ -1,4 +1,4 @@
-#!/Users/saadkhan/Developer/Python-DS-Udemy/venv/bin/python3.10
+#!/Users/saadkhan/Developer/Python-DS-Udemy/venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
