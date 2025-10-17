@@ -66,5 +66,20 @@ print(type(age), type(height), type(name), type(is_student))
 # Output:
 <class 'int'> <class 'float'> <class 'str'> <class 'bool'>
 ```
+
+## Datatypes:
+1. Definition:
+- Datatypes are a classification of data which tell the compiler or interpreter how the program intends to use the data.
+- They determine the type of operations that can be performed on the data, the values that can be stored, and the amount of memory needed to store the data.
+
+2. Importance of Data Types in Programming:
+- Datatypes ensure that the data is stored in an efficiet way.
+- They help in performing correct operations on data.
+- Proper use of datatypes can prevent errors and bugs in the program.
+
+3. Python DataTypes:
+![Python Data Types](./assets/python-data-types.png)
+
+
 ## Important Notice:
 - It is always advisable and good practice that we should create a separate environment(venv) for any project we work on , so that we can segregate the packages and libraries in a very easy way and if in future there are any new updates in those packages.
