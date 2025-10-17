@@ -4,9 +4,10 @@
 1. Syntax:
 - Syntax refers to the set of rules that defines the combinations of symbols that are considerable to be correctly structured programs in a language.
 - In simple terms, syntax is about the correct arrangement of words and symbols in a code.
+- Python is case sensitive.
 
-## Basic Syntax rules in Python
-## Case sensitivity - Python is case sensitive
+#### Basic Syntax rules in Python
+
 ```
 name = "Saad"
 Name = "Khan"
@@ -34,6 +35,36 @@ else:
 
 print(age)
 ```
+## Variables:
+- Variables are fundamental elements in programming used to store data that can be referenced and manipulated in a program.
+- In python, variables are created when you assign a value to them, and they do not need explicit declaration to reserve memory space.
+- The declaration to reserve memoruy space. The declaration happens automatically when you assign a value to variable.
+- Valid variable names examples:
+```
+## valid variable names:
+first_name = "Saad"
+last_name = "Khan"
+full_name = first_name + " " + last_name
+print(full_name)
+```
+- Invalid variable names examples:
+```
+1. 2names = "Saad"
+2. 2 names = "Saad"
+3. @names = "Saad"
+```
 
+### Understanding variable types:
+- Python is dynamically typed, type of a variable is determined at runtime
+```
+age = 29 #int
+height = 5.2 #float
+name = "Saad" #string
+is_student = True #boolean
+print(type(age), type(height), type(name), type(is_student))
+
+# Output:
+<class 'int'> <class 'float'> <class 'str'> <class 'bool'>
+```
 ## Important Notice:
 - It is always advisable and good practice that we should create a separate environment(venv) for any project we work on , so that we can segregate the packages and libraries in a very easy way and if in future there are any new updates in those packages.
