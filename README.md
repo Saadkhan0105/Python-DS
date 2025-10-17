@@ -80,6 +80,89 @@ print(type(age), type(height), type(name), type(is_student))
 3. Python DataTypes:
 ![Python Data Types](./assets/python-data-types.png)
 
+# Operators in Python:
+![Operators](./assets/operators.png)
+- Example:
+1. Arithmetic Operators:
+```
+a = 10
+b = 5
 
+add_result = a + b
+print(add_result)
+# Output
+15
+
+sub_result = a - b
+print(sub_result)
+# Output
+5
+
+mul_result = a * b
+print(mul_result)
+# Output
+50
+
+div_result = a / b
+print(div_result)
+# Output
+2.0
+
+mod_result = a % b
+print(mod_result)
+# Output
+0
+
+exp_result = a ** b
+print(exp_result)
+# Output
+100000
+```
+2. Comparison Operators:
+
+```
+a = 10
+b = 5
+print(a == b)
+# Output
+False
+
+print(a != b)
+# Output
+True
+
+print(a > b)
+# Output
+True
+
+print(a < b)
+# Output
+False
+
+print(a >= b)
+# Output
+True
+
+print(a <= b)
+# Output
+False
+```
+3. Logical Operators:
+```
+a = True
+b = False
+
+print(a and b)
+# Output
+False
+
+print(a or b)
+# Output
+True
+
+print(not a)
+# Output
+False
+```
 ## Important Notice:
 - It is always advisable and good practice that we should create a separate environment(venv) for any project we work on , so that we can segregate the packages and libraries in a very easy way and if in future there are any new updates in those packages.
