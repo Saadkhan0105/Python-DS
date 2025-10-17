@@ -164,5 +164,38 @@ print(not a)
 # Output
 False
 ```
+
+## Conditional Statements:
+1. if-statement:
+- The if condition is considered the simplest of the three and makes a decision based on whether the condition is true or not. 
+- If the condition is true, it prints out the indented expression. If the condition is false, it skips printing the indented expression.
+```
+age = 23
+if age>= 18:
+    print("You are old enough to vote!")
+```
+2. else-statement:
+- The else statement executes a block of code if the condition in the if statement is False.
+```
+age = 16
+
+if age>=18:
+    print("You are old enough to vote!")
+else:
+    print("You are not old enough to vote!")
+```
+3. elif-statement:
+- The elif statement allows you to check multiple conditions. It stands for "else if"
+```
+age = 17
+
+if age < 13:
+    print("Ypou are a child")
+elif age < 18:
+    print("You are a teenager")
+else:
+    print("You are an adult")
+```
+
 ## Important Notice:
 - It is always advisable and good practice that we should create a separate environment(venv) for any project we work on , so that we can segregate the packages and libraries in a very easy way and if in future there are any new updates in those packages.
