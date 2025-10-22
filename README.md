@@ -197,5 +197,84 @@ else:
     print("You are an adult")
 ```
 
+## Loops:
+- Loops are used to execute a block of code repeatedly until a certain condition is met.
+- There are two types of loops in Python:
+1. for-loop:
+- The for loop is used to iterate over a sequence (such as a list, tuple, or string) or other iterable objects.
+```
+for i in range(5):
+    print(i)
+```
+2. while-loop:
+- The While Loop is used to execute a block of statements repeatedly until a given condition is satisfied. 
+- The condition is checked before each iteration of the loop. When the condition becomes false, the line immediately after the loop in the program is executed.
+```
+count = 0
+while count < 3:
+    count = count + 1
+    print("Hello Geek")
+```
+
+## Data Structures:
+- Data structures are used to organize and manage data in a program.
+- Python has four built-in data structures:
+#### 1. Lists:
+- Lists are ordered, mutable collections of items.
+- They can contain elements of different data types, including numbers, strings, and even other lists
+- Lists are defined using square brackets [] and elements are separated by commas.
+- Lists are mutable, meaning you can change, add, or remove elements after the list is created.
+- Example:
+```
+marks = [54, 23, 64, 93, 32]
+mixed = [45, "Saad", 23.5, True]
+print(marks) # Output: [54, 23, 64, 93, 32]
+print(mixed) # Output: [45, 'Saad', 23.5, True]
+print(type(marks)) # Output: <class 'list'>
+print(type(mixed)) # Output: <class 'list'>
+```
+#### List Methods:
+- Python provides several built-in methods to manipulate lists:
+1. append(item): Adds an item to the end of the list.
+2. insert(index, item): Inserts an item at a specified index.
+3. remove(item): Removes the first occurrence of an item from the list.
+4. pop(index): Removes and returns the item at the specified index (default is the last item).
+5. sort(): Sorts the list in ascending order.
+6. reverse(): Reverses the order of the list.
+7. index(item): Returns the index of the first occurrence of an item.
+8. count(item): Returns the number of occurrences of an item in the list.
+- Example:
+```
+marks = [5, 2, 21, 5, 7]
+extra_marks = [45, 67, 89]
+print(marks)
+
+marks.append(63)  # adds 63 to the end of the list
+marks.pop()     # removes the last element from the list
+marks.sort()    # sorts the list in ascending order
+marks.reverse() # reverses the list
+marks.insert(2, 23) # inserts 23 at index 2
+marks.remove(23) # removes the first occurrence of 23
+marks.count(5) # counts the number of occurrences of 5
+marks.index(5) # returns the index of the first occurrence of 5
+marks.extend(extra_marks) # extends the list by adding elements from another list
+marks.clear() # clears the list
+marks.copy() # returns a shallow copy of the list
+
+print(marks)
+```
+
+#### List Comprehension:
+- List comprehension is a concise way to create lists in Python.
+- It allows you to generate a new list by applying an expression to each item in an existing iterable (like a list or range) and optionally filtering items based on a condition.
+- The syntax for list comprehension is:
+```
+table_comp = [5 * i for i in range(1, 11)]
+print(table_comp)
+```
+
+
+
+
 ## Important Notice:
 - It is always advisable and good practice that we should create a separate environment(venv) for any project we work on , so that we can segregate the packages and libraries in a very easy way and if in future there are any new updates in those packages.
