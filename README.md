@@ -274,9 +274,44 @@ print(table_comp)
 ```
 
 #### 2. Tuples:
-- Tuples are ordered collections of items that are immutable. They are similar to lists, but their immutability makes them more efficient and convenient for use in some situations.
+- Tuples are ordered, immutable collections of items.
+- They are similar to lists but cannot be modified after creation.
 - Tuples are defined using parentheses () and elements are separated by commas.
-- Tuples are useful for cases where you don't want to modify the data after creation.
+- Example:
+```
+a = (3, 2, 22, 13)
+print(a)
+print(type(a))
+print(a[2])  # Output: 22
+
+Single Element Tuple:
+b = (5,)  
+print(b)
+```
+
+#### Tuple Unpacking:
+- Tuple unpacking allows you to assign the elements of a tuple to individual variables in a single statement.
+- Example:
+```
+tu = (3, 2, 45)
+a, b, c = tu
+print(a, b, c)  # Output: 3 2 45
+```
+
+#### Tuple Methods:
+- Tuples have a limited number of built-in methods due to their immutability:
+1. count(item): Returns the number of occurrences of an item in the tuple.
+2. index(item): Returns the index of the first occurrence of an item.
+- Example:
+```
+t = (3, 12, 1, 54, 23, 12)
+print(t.count(12))  # Output: 2
+print(t.index(54))  # Output: 3
+```
+
+#### Why Use Tuples?
+- Tuples are used when you want to create a collection of items that should not be modified.
+- They are more memory efficient than lists and can be used as keys in dictionaries.
 
 
 
