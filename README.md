@@ -273,6 +273,10 @@ table_comp = [5 * i for i in range(1, 11)]
 print(table_comp)
 ```
 
+#### 2. Tuples:
+- Tuples are ordered collections of items that are immutable. They are similar to lists, but their immutability makes them more efficient and convenient for use in some situations.
+- Tuples are defined using parentheses () and elements are separated by commas.
+- Tuples are useful for cases where you don't want to modify the data after creation.
 
 
 
