@@ -313,6 +313,128 @@ print(t.index(54))  # Output: 3
 - Tuples are used when you want to create a collection of items that should not be modified.
 - They are more memory efficient than lists and can be used as keys in dictionaries.
 
+#### 3. Sets:
+- Sets are built-in data type in Python that are used to store collections of unique elements.
+- They are unordered meaning that the elements do not follow a specific order, and they do not allow duplicate elements.
+- Sets are useful for membership testing, removing duplicates, and performing mathematical operations like union, intersection,difference and symmetric difference.
+- Sets are defined using curly braces {} and elements are separated by commas.
+- Example:
+```
+my_set = {1, 2, 3, 4, 5}
+print(my_set)  # Output: {1, 2, 3, 4, 5}
+print(type(my_set))  # Output: <class 'set'>
+```
+
+## Sets Methods:
+- Python provides several built-in methods to manipulate sets:
+1. add(item): Adds an item to the set.
+2. remove(item): Removes an item from the set. Raises a KeyError if the item is not found.
+3. discard(item): Removes an item from the set if it exists. Does not raise an error if the item is not found.
+4. pop(): Removes and returns an arbitrary item from the set.
+5. clear(): Removes all items from the set.
+- Example:
+```
+s = {34, 23, 1, 3}
+s.add(45)  # adds 45 to the set
+s.remove(3) # removes 3 from the set
+s.discard(10) # tries to remove 10 from the set, but does not
+s.pop() # removes and returns an arbitrary item from the set
+s.clear() # clears the set
+print(s)
+```
+
+## Set Operations:
+- Sets support various mathematical operations:
+1. Union (|): Combines two sets, including all unique elements from both sets.
+2. Intersection (&): Returns only the elements that are present in both sets.
+3. Difference (-): Returns elements that are in the first set but not in the second set
+4. Symmetric Difference (^): Returns elements that are in either set but not in both.
+5. issubset(): Checks if one set is a subset of another.
+6. issuperset(): Checks if one set is a superset of another.
+7. isdisjoint(): Checks if two sets have no elements in common.
+8. copy(): Returns a shallow copy of the set.
+- Example:
+```
+a = {3, 23, 1}
+b = {23, 4, 2, 55, 1}
+
+c = a.union(b) # Union of two sets
+print("Union:", c)
+d = a.intersection(b) # Intersection of two sets
+print("Intersection:", d)
+e = a.difference(b) # Elements in a but not in b
+print("Difference (a-b):", e)
+f = b.difference(a) # Elements in b but not in a
+print("Difference (b-a):", f)
+g = a.symmetric_difference(b) # Elements in either a or b but not in both
+print("Symmetric Difference:", g)
+h = a.issubset(b) # Check if a is subset of b
+print("Is a subset of b:", h)
+i = a.issuperset(b) # Check if a is superset of b
+print("Is a superset of b:", i)
+j = a.isdisjoint(b) # Check if a and b have no elements in common
+print("Are a and b disjoint:", j)
+k = a.copy() # Shallow copy of set a
+print("Copy of a:", k)
+l = a.clear() # Clear all elements from set a
+print("Cleared a:", a)
+```
+
+### Important Point 🧠:
+- when we call add(), Python:
+	1.	Calculates the hash of the element.
+	2.	Puts it in a bucket in the hash table.
+	3.	Prints the set in whatever order it currently has internally — not “first added, first shown.”
+
+#### 4. Dictionaries:
+- Dictionaries are unordered collections of key-value pairs.
+- They are defined using curly braces {} with key-value pairs separated by commas.
+- Keys must be unique and immutable, while values can be of any data type.
+- Example:
+```
+my_dict = {"name": "Saad", "age": 29, "city": "Mumbai"}
+print(my_dict)  # Output: {'name': 'Saad', 'age': 29, 'city': 'Mumbai'}
+print(my_dict["name"])  # Output: Saad
+print(type(my_dict))  # Output: <class 'dict'>
+```
+
+#### Dictionary Methods:
+- Python provides several built-in methods to manipulate dictionaries:
+1. keys(): Returns a view object containing the keys of the dictionary.
+2. values(): Returns a view object containing the values of the dictionary.
+3. items(): Returns a view object containing the key-value pairs of the dictionary.
+4. get(key, default): Returns the value for the specified key. If the key is not found, returns the default value (None if not specified).
+5. update(other_dict): Updates the dictionary with key-value pairs from another dictionary.
+6. pop(key, default): Removes the specified key and returns its value. If the key is not found, returns the default value (raises KeyError if not specified).
+7. popitem(): Removes and returns an arbitrary key-value pair from the dictionary.
+8. clear(): Removes all items from the dictionary.
+- Example:
+```
+marks = {"Saad": 54, "Abuzar": 45, "Umaima": 93}
+
+print(marks.keys())  # Prints all the keys in the dictionary
+print(marks.values())  # Prints all the values in the dictionary
+print(marks.items())  # Prints all the key-value pairs in the dictionary
+marks.update({"Saad": 100, "Ali": 67})  # Updates the dictionary with new key-value pairs
+print(marks)
+marks.pop("Ali")  # Removes the key-value pair with the specified key
+print(marks)
+marks.popitem()  # Removes the last key-value pair from the dictionary
+print(marks)
+marks.clear()  # Clears the dictionary
+print(marks)
+```
+
+#### Dictionary Comprehension:
+- Dictionary comprehension is a concise way to create dictionaries in Python.
+- It allows you to generate a new dictionary by applying an expression to each item in an existing
+- iterable (like a list or range) and optionally filtering items based on a condition.
+- The syntax for dictionary comprehension is:
+```
+table_comp = {i: 5*i for i in range(1, 11)}
+print(table_comp)
+```
+
 
 
 ## Important Notice:
