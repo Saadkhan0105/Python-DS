@@ -436,6 +436,71 @@ print(table_comp)
 ```
 
 
+## Functions:
+- A function is a block of code that performs a specific task. 
+- It can be called from other parts of the code to perform the same task. 
+- In Python, Functions can be defined using the `def` keyword.
+
+#### Defining Functions in Python:
+- Example:
+```
+def greet(name):
+    return f"Hello, {name}!"
+print(greet("Saad"))  # Output: Hello, Saad!
+``` 
+#### Key Points:
+- Define using def keyword.
+- Function name should be descriptive.
+- Use `return` to send a value back
+
+#### Functions Arguments and Return Values:
+- Functions can accept inputs called arguments or parameters.
+- There are different types of function arguments:
+1. Positional Arguments: Arguments are passed in the same order as the parameters are defined.
+    - Example:
+    ```
+    def add(a, b):
+         return a + b
+    print(add(2, 3))  # Output: 5
+    ```
+2. Keyword Arguments: Arguments are passed by explicitly specifying the parameter name.
+    - Example:
+    ```
+    def add(a, b):
+         return a + b
+    print(add(b=3, a=2))  # Output: 5
+    ```
+3. Default Arguments: Parameters can have default values, which are used if no argument is provided
+    - Example:
+    ```
+    def greet(name="Guest"):
+         return f"Hello, {name}!"
+    print(greet())  # Output: Hello, Guest!
+    print(greet("Saad"))  # Output: Hello, Saad!
+    ```
+
+#### Lambda Functions:
+- Lambda functions are small anonymous functions defined using the lambda keyword.
+- They can take any number of arguments but can only have a single expression.
+- Example:
+```
+square = lambda x: x * x
+print(square(5))
+```
+
+#### Recursion:
+- Recursion is a programming technique where a function calls itself to solve a problem.
+- A recursive function typically has a base case to stop the recursion and a recursive case to continue.
+- Example:
+```
+def factorial(n):
+    if n == 0 or n == 1:  # Base case
+        return 1
+    else:
+        return n * factorial(n - 1)  # Recursive case
+print(factorial(5))  # Output: 120
+```
+
 
 ## Important Notice:
 - It is always advisable and good practice that we should create a separate environment(venv) for any project we work on , so that we can segregate the packages and libraries in a very easy way and if in future there are any new updates in those packages.
