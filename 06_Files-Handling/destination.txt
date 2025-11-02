@@ -1,0 +1,5 @@
+
+This is a wonderful course on Python file handling.
+Append operation is taking place.First line
+Second line
+Third line
