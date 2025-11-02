@@ -1,0 +1,1 @@
+Write a function that reads the contents of a file named `stats.txt` and returns the number of lines, words, and characters in the file.

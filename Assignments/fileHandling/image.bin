@@ -1,0 +1,1 @@
+Write a function that reads a binary file named `image.bin` and writes its contents to another binary file named `copy_image.bin`.

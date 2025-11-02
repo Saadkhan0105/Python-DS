@@ -1,0 +1,2 @@
+Hello This is a sample file.
+This file is used to demonstrate file handling in Python.
