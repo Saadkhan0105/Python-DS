@@ -502,5 +502,50 @@ print(factorial(5))  # Output: 120
 ```
 
 
+#### Exception Handling and Custom Errors:
+- Exception handling is a fundamental concept in Python that allows you to handle errors or unexpected events that occur during program execution.
+- It helps in maintaining the normal flow of the program even when errors occur.
+- In Python, exceptions are handled using the try-except block.
+- Example:
+```
+while True:
+    try:
+        a = int(input("Enter number 1:"))
+        b = int(input("Enter number 2:"))
+
+        print("The sum is:", a + b)
+    except:
+        print("Invalid input, please try again.")
+```
+- Custom errors can be created using the `raise` statement.
+- Example:
+```
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
+try:
+    print(divide(10, 0))
+except ValueError as e:
+    print(e)
+```
+#### else-finally:
+- The else block is executed if no exceptions are raised in the try block.
+- The finally block is executed regardless of whether an exception was raised or not.
+- Example:
+```
+try:
+    a = int(input("Enter number 1:"))
+    b = int(input("Enter number 2:"))
+
+    print("The sum is:", a + b)
+except ValueError:
+    print("Invalid input, please enter integers only.")
+else:
+    print("No exceptions occurred, the operation was successful.")
+finally:
+    print("This block is always executed, cleaning up resources if needed.")
+``` 
+
 ## Important Notice:
 - It is always advisable and good practice that we should create a separate environment(venv) for any project we work on , so that we can segregate the packages and libraries in a very easy way and if in future there are any new updates in those packages.
