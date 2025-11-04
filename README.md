@@ -434,7 +434,13 @@ print(marks)
 table_comp = {i: 5*i for i in range(1, 11)}
 print(table_comp)
 ```
-
+#### When to Use Each Data Structure:
+| Data Structure    | Features                | Best For                                |
+|-------------------|-------------------------|-----------------------------------------|
+| List              | 28                      | Storing Sequences, Dynamic Data         |
+| Tuple             | 25                      | Fixed collections, dictionary keys.     |
+| Set               | Unordered, Unique       | Removing duplicates, set operations     |
+| Dictionary        | Key-Value Pairs         | Fast lookups, structured data           |
 
 ## Functions:
 - A function is a block of code that performs a specific task. 
@@ -547,5 +553,149 @@ finally:
     print("This block is always executed, cleaning up resources if needed.")
 ``` 
 
-## Important Notice:
+
+#### Object Oriented Programming(OOPS) in Python:
+
+#### 1. What is Object Oriented Programming(OOPS)?
+- Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects, which combine data (attributes) and functions (methods) that operate on that data.
+
+- 👉 In simple terms: OOP lets you model real-world things (like a Car, Student, or Bank Account) as objects in code. 
+- OOP helps make code more modular, reusable, and easier to maintain.
+
+#### 🧱 4 Pillars of OOP
+1.	Encapsulation 🧰 :
+- Encapsulation llows us to bundle data (attributes) and behaviors (methods) within a class to create a cohesive unit. 
+- By defining methods to control access to attributes and its modification, encapsulation helps maintain data integrity and promotes modular, secure code.
+2.	Abstraction 🎭 :
+- Abstraction focuses on hiding implementation details and exposing only the essential functionality of an object. 
+- By enforcing a consistent interface, abstraction simplifies interactions with objects, allowing developers to focus on what an object does rather than how it achieves its functionality.
+3.  Inheritance 🧬 :
+- Inheritance enables the creation of hierarchical relationships between classes, allowing a subclass to inherit attributes and methods from a parent class.
+- This promotes code reuse and reduces duplication
+4.  Polymorphism 🔄 :
+- Polymorphism allows you to treat objects of different types as instances of the same base type, as long as they implement a common interface or behavior. 
+- Python’s duck typing make it especially suited for polymorphism, as it allows you to access attributes and methods on objects without needing to worry about their actual class.
+
+#### Class and Objects:
+##### Class:
+- A class is a blueprint for creating objects. It defines the attributes and methods that the objects of that class will have. 
+- Eg: Form for an Exam that contains name, age, elective, father's name etc.
+
+
+##### Object:
+- An object is an instance of a class. It represents a specific entity with its own state and behavior.
+- Eg: Form which contains the data for John Doe
+
+##### Creating a Class and Object in Python:
+```
+class Employee:
+    company = "HP"
+    
+    def get_salary(self):
+        return 34000
+```
+- Self: It is a way to reference the object of the class which is being created.
+
+#### Constructors:
+- A constructor is a special method that is automatically called when an object of a class is created.
+- It is used to initialize the attributes of the object.
+- In Python, the constructor method is defined using the __init__() method.
+- Example:
+```
+class Employee:    
+    def __init__(self, salary, name, bond):
+        self.salary = salary # create an instance variable of name salary and assign it with salary
+        self.name = name
+        self.bond = bond  
+
+    def get_salary(self): 
+        return self.salary   
+
+    def get_info(self):
+        return f"The name of the employee is {self.name} and salary is {self.salary}. The bond is {self.bond} years."  
+          
+e1 = Employee(34000, "Saad", 4)
+print(e1.get_salary())
+print(e1.get_info())
+
+```
+
+#### Object Introspection:
+- Object introspection is a mechanism in Python that allows you to get information about an object at runtime.
+- It provides a way to examine the attributes, methods, and properties of an object dynamically.
+
+#### Inheritance:
+- Inheritance is a fundamental concept in object-oriented programming that allows a class (called the child or subclass) to inherit attributes and methods from another class (called the parent or superclass).
+- This promotes code reuse and establishes a hierarchical relationship between classes.
+- Example:
+```
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def speak(self):
+        print("Generic animal sound")
+        
+class Dog(Animal): # Dog class inherits from Animal class
+    def speak(self): # overriding the speak method
+        print(f"{self.name} says Woof Woof!")
+
+class Cat(Animal): # Cat class inherits from Animal class
+    def speak(self): # overriding the speak method
+        print(f"{self.name} says Meow Meow!")
+        
+my_dog = Dog("Buddy")
+my_cat = Cat("Whiskers")
+
+print(my_dog.name) # accessing instance variable from parent class
+my_dog.speak() # calling overridden method
+
+print(my_cat.name) # accessing instance variable from parent class
+my_cat.speak() # calling overridden method
+```
+
+#### Polymorphism:
+- Polymorphism is a concept in object-oriented programming that allows objects of different classes to be treated as instances of the same base class.
+- It enables a single interface to represent different underlying forms (data types).
+- Example:
+```
+# Calling Parent Constructor with super()
+class Bird(Animal):
+    def __init__(self, name, wingspan):
+        super().__init__(name)  # Call Animal's __init__ to set the name
+        self.wingspan = wingspan # Add a Bird-specific attribute
+
+my_bird = Bird("Tweety", 10)
+print(my_bird.name)      # Output: Tweety (set by Animal's constructor)
+print(my_bird.wingspan)  # Output: 10   (set by Bird's constructor)
+```
+
+#### Operator Overloading:
+- Operator overloading is a feature in Python that allows you to define custom behavior for standard operators (like +, -, *, etc.) when they are used with instances of your classes.
+- By overloading operators, you can make your custom objects behave like built-in types, making
+    them more intuitive to use.
+- Example:
+```
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        
+    def sum(self, p):
+        return Point(self.x + p.x, self.y + p.y)
+    
+    def print_point(self):
+        print(f"X is {self.x} and Y is {self.y}")
+        
+    def __add__(self, p):
+        return Point(self.x + p.x, self.y + p.y)
+
+p1 = Point(3, 2)
+p2 = Point(6, 3)
+
+# p = p1.sum(p2)
+p = p1 + p2  # using __add__ method
+p.print_point()
+```
+#### Important Notice:
 - It is always advisable and good practice that we should create a separate environment(venv) for any project we work on , so that we can segregate the packages and libraries in a very easy way and if in future there are any new updates in those packages.
