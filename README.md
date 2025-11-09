@@ -507,6 +507,33 @@ def factorial(n):
 print(factorial(5))  # Output: 120
 ```
 
+## Modules and Pip (using external libraries):
+
+There are two type of modules in Python:
+1. Built-in Modules: These are pre-installed with Python and can be used directly without any
+   additional installation. Examples include `math`, `sys`, `os`, etc.
+2. External Modules: These are third-party modules that need to be installed separately using package
+   managers like pip. Examples include `numpy`, `pandas`, `requests`, etc.
+#### Key Points:
+- Modules are files containing Python code that can define functions, classes, and variables.
+- They allow you to organize your code into separate files and reuse code across different programs.
+- You can create your own modules or use built-in modules and third-party libraries.
+- To use a module, you can import it using the import statement.
+- Example:
+```
+import math
+print(math.sqrt(16))  # Output: 4.0
+```
+- Pip is the package installer for Python. It allows you to install and manage third-party libraries and packages.
+- To install a package using pip, you can use the command:
+```
+pip install requests
+
+import requests
+
+response = requests.get("https://api.github.com")
+print(response.status_code)  # Output: 200
+```
 
 #### Exception Handling and Custom Errors:
 - Exception handling is a fundamental concept in Python that allows you to handle errors or unexpected events that occur during program execution.
