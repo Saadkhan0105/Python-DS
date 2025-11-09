@@ -724,5 +724,196 @@ p2 = Point(6, 3)
 p = p1 + p2  # using __add__ method
 p.print_point()
 ```
+
+### Advanced Concepts:
+
+#### 1. Decorators:
+- Decorators are a powerful feature in Python that allows you to modify the behavior of a function or class method without changing its actual code.
+- They are often used for logging, access control, caching, and other cross-cutting concerns
+- A decorator is a function that takes another function as an argument, extends its behavior, and returns a new function.
+
+- Example:
+```
+# Decorator is a function that takes a function, it creates a new function inside its body (wrapper) and returns a new function.
+def decorator(func):
+    def wrapper():
+        print("I am about to call a function")
+        func()
+        print("I have called the function")
+    return wrapper
+
+@decorator
+def say_hello():
+    print("Hello")
+    
+say_hello()
+# f = decorator(say_hello)
+# f()
+'''
+f will look something like this:
+def f():
+    print("I am about to call a function")
+    print("Hello")
+    print("I have called the function")
+'''
+```
+
+##### Decorators with Arguments::
+- If the function being decorated takes arguments, the wrapper function inside the decorator must also accept those arguments and pass them to the original function.
+- Example:
+```
+def repeat(n):
+    def decorator(func):
+        def wrapper(a):
+            for i in range(n):
+                func(a)
+        return wrapper
+    return decorator
+
+@repeat(7)
+def say_hello(name):
+    print(f"Hello {name}")
+    
+say_hello("Saad")
+```
+
+
+#### 2. Getters and Setters:
+- Getters and setters are methods used to access and modify the attributes of a class.
+- They provide a way to encapsulate the internal representation of an object and control how its attributes are accessed and modified.
+- Example:
+```
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+    
+    @property
+    def first_name(self):
+        l = self.name.split(" ")
+        return l[0]
+    
+    @first_name.setter
+    def first_name(self, first):
+        l = self.name.split(" ")
+        new_name = f"{first} {l[1]}"
+        self.name = new_name
+
+e = Employee("Saad Khan", 50000)
+# print(e.first_name())
+# e.set_first_name("Abuzar")
+# print(e.name)
+
+print(e.first_name)
+e.first_name = "Abuzar"
+print(e.name)
+```
+
+##### Important Point 🧠:
+- To make an attribute read-only, define just the @property decorator (the getter) and leave out the @name.setter method.
+- Trying to set the attribute will raise an AttributeError.
+
+#### 3. Static and Class Methods:
+- Static and class methods are special methods that can be defined inside a class.
+- Static methods are bound to the class rather than the instance of the class, while class methods are bound to the class itself.
+- Example:
+```
+class Employee:
+    company = "Google"
+    
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+    
+    # Instance Method
+    def print_info(self):
+        print(f"Employee Name: {self.name}, Salary: {self.salary}")
+        
+    # Static Method
+    @staticmethod
+    def sum(a, b):
+        return a + b
+    
+    # Class Method
+    @classmethod
+    def print_company(cls):
+        print(cls.company) 
+    @classmethod
+    def change_company(cls, new_company):
+        cls.company = new_company
+
+e1 = Employee("Saad", 100000)
+e2 = Employee("Abuzar", 120000)
+# print(Employee.company)
+# print(Employee.name)
+
+e1.print_info()
+e2.print_info()
+
+# print(e2.sum(5, 7))
+print(Employee.company)
+e1.change_company("Amazon")
+print(Employee.company)
+```
+
+##### Important Point 🧠:
+- Static methods can be called on the class itself, not on an instance of the class.
+- Class methods can be called on the class itself, but they also have access to the class itself.
+
+#### 4. Magic Methods or Dunder Methods:
+- Magic methods or dunder methods are special methods in Python that allow you to customize the behavior of built-in operators or built-in functions.
+- They are called "dunder" methods because they are surrounded by double underscores (e.g., __init__, __add__, __str__).
+- Example:
+```
+class Employee:
+    company = "Google"
+    
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+    
+    def __str__(self):
+        return f"The name of the employee is {self.name} and the salary is {self.salary}"
+    
+    def __repr__(self):
+        return f"Employee: {self.name}\nsalary: {self.salary}"
+    
+    def __len__(self):
+        return len(self.name)
+        
+e = Employee("Saad", 100000)
+print(len(e))
+print(e.name, e.salary)
+print(str(e))
+print(repr(e))
+```
+
+##### Common Magic Methods:
+| Magic Method   | Description                                      | Example Usage                       |
+|----------------|--------------------------------------------------|------------------------------------|
+| `__init__`     | Constructor method to initialize an object      | `obj = MyClass()`                  |
+| `__str__`      | String representation of an object              | `print(obj)`                       |
+| `__repr__`     | Official string representation of an object     | `repr(obj)`                        |
+| `__add__`      | Addition operator overloading                   | `obj1 + obj2`                      |
+| `__sub__`      | Subtraction operator overloading                | `obj1 - obj2`                      |
+| `__mul__`      | Multiplication operator overloading             | `obj1 * obj2`                      |
+| `__len__`      | Length of an object                             | `len(obj)`                         |
+| `__getitem__`  | Accessing an item using indexing                | `obj[index]`                       |
+| `__setitem__`  | Setting an item using indexing                  | `obj[index] = value`               |
+| `__delitem__`  | Deleting an item using indexing                 | `del obj[index]`                   |
+| `__iter__`     | Iterator for an object                           | `for item in obj:`                 |
+| `__next__`     | Next item in an iterator                         | `next(obj)`                        |
+| `__call__`     | Calling an object as a function                 | `obj(arg1, arg2)`                  |
+| `__enter__`    | Context manager entry point                     | `with obj:`                        |
+| `__exit__`     | Context manager exit point                      | `with obj:`                        |
+| `__getattr__`  | Attribute access that doesn’t exist             | `obj.non_existent_attribute`       |
+| `__setattr__`  | Attribute assignment that doesn’t exist         | `obj.non_existent_attribute = value` |
+| `__delattr__`  | Attribute deletion that doesn’t exist           | `del obj.non_existent_attribute`   |
+| `__eq__`       | Equality comparison operator overloading        | `obj1 == obj2`                     |
+| `__ne__`       | Inequality comparison operator overloading      | `obj1 != obj2`                     |
+| `__lt__`       | Less than comparison operator overloading       | `obj1 < obj2`                      |
+| `__gt__`       | Greater than comparison operator overloading    | `obj1 > obj2`                      |
+| `__le__`       | Less than or equal to comparison operator overloading | `obj1 <= obj2`                 |
+
 #### Important Notice:
 - It is always advisable and good practice that we should create a separate environment(venv) for any project we work on , so that we can segregate the packages and libraries in a very easy way and if in future there are any new updates in those packages.
