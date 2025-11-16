@@ -915,5 +915,49 @@ print(repr(e))
 | `__gt__`       | Greater than comparison operator overloading    | `obj1 > obj2`                      |
 | `__le__`       | Less than or equal to comparison operator overloading | `obj1 <= obj2`                 |
 
+
+## Data-Analysis:
+#### 1. Numpy:
+- Numpy is a library for scientific computing in Python.
+- It provides support for arrays and matrices along with a collection of mathematical functions to operate on these data structures.
+- To install Numpy, you can use pip:
+```
+pip install numpy
+```
+- Example:
+```
+import numpy as np
+
+## create arrays using numpy
+## creating 1D array
+
+arr1 = np.array([1, 2, 3, 4, 5])
+print(arr1)
+print(type(arr1))
+print(arr1.shape)
+```
+
+#### 2. Pandas:
+- Pandas is a powerful library for data manipulation and analysis in Python.
+- It provides data structures like Series and DataFrame to work with structured data.
+- To install Pandas, you can use pip:
+```
+pip install pandas
+```
+- Example:
+```
+import pandas as pd
+data = {
+    'Name': ['Saad', 'Abuzar', 'Umaima'],
+    'Age': [29, 27, 25],
+    'City': ['Mumbai', 'Delhi', 'Bangalore']
+}
+
+df = pd.DataFrame(data)
+print(df)
+```
+
+
+
 #### Important Notice:
 - It is always advisable and good practice that we should create a separate environment(venv) for any project we work on , so that we can segregate the packages and libraries in a very easy way and if in future there are any new updates in those packages.
