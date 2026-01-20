@@ -6,6 +6,32 @@
 - In simple terms, syntax is about the correct arrangement of words and symbols in a code.
 - Python is case sensitive.
 
+
+#### Different ways to create a virtual environment in Python:
+1. Using venv module:
+- venv module is a built-in module in Python 3.3 and later versions.
+- It creates a self-contained directory that contains a Python installation for a particular version of Python.
+- Example:
+```
+python -m venv myenv
+```
+2. Using virtualenv module:
+- virtualenv is a third-party module that can be installed using pip.
+- It creates a self-contained directory that contains a Python installation for a particular version of Python.
+- Example:
+```
+pip install virtualenv
+virtualenv myenv
+```
+
+3. Using Anaconda:
+- Anaconda is a popular distribution of Python that comes with a package manager called conda.
+- It provides a convenient way to create and manage virtual environments.
+- Example:
+```
+conda create -n myenv python=3.7
+```
+
 #### Basic Syntax rules in Python
 
 ```
