@@ -983,7 +983,45 @@ df = pd.DataFrame(data)
 print(df)
 ```
 
+### Multi-Threading and Multi-Processing:
+- Multi-threading and multi-processing are techniques used to achieve concurrent execution of tasks in Python.
+- Multi-threading allows multiple threads to run within a single process, sharing the same memory space
+- Multi-processing allows multiple processes to run concurrently on different processors, sharing the same memory space.
+- Example of Multi-threading:
+```
+import threading
+import time
+def print_numbers():
+    for i in range(5):
+        time.sleep(2)
+        print(f"Number: {i}")
+        
+def print_letters():
+    for letter in "abcde":
+        time.sleep(2)
+        print(f"Letter: {letter}")
+        
 
+##create 2 threads
+t1=threading.Thread(target=print_numbers)
+t2=threading.Thread(target=print_letters)
+
+t=time.time()
+## start the thread
+t1.start()
+t2.start()
+
+### Wait for the threads to complete
+t1.join()
+t2.join()
+
+finished_time=time.time()-t
+print(finished_time)
+```
+
+- Example of Multi-processing:
+```
+```
 
 #### Important Notice:
 - It is always advisable and good practice that we should create a separate environment(venv) for any project we work on , so that we can segregate the packages and libraries in a very easy way and if in future there are any new updates in those packages.
