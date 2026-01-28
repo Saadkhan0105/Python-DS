@@ -1021,6 +1021,60 @@ print(finished_time)
 
 - Example of Multi-processing:
 ```
+import multiprocessing
+
+import time
+
+def square_numbers():
+    for i in range(5):
+        time.sleep(1)
+        print(f"Square: {i*i}")
+
+def cube_numbers():
+    for i in range(5):
+        time.sleep(1.5)
+        print(f"Cube: {i * i * i}")
+
+if __name__=="__main__":
+
+    ## create 2 processes
+    p1=multiprocessing.Process(target=square_numbers)
+    p2=multiprocessing.Process(target=cube_numbers)
+    t=time.time()
+
+    ## start the process
+    p1.start()
+    p2.start()
+
+    ## Wait for the process to complete
+    p1.join()
+    p2.join()
+
+    finished_time=time.time()-t
+    print(finished_time)
+```
+
+## Flask:
+- Flask is a lightweight web framework for Python that allows you to build web applications quickly and easily.
+- As a Web Server Gateway Interface (WSGI) framework, it provides essential features like routing and templating without enforcing a specific database or project structure.
+- It is known for being easy to start, flexible, and extensible, making it ideal for both small projects and complex, scalable web applications. 
+- To install Flask, you can use pip:
+```
+pip install Flask
+```
+
+#### Jinja2 Template:
+- Jinja2 is a templating engine for Python that is used to generate dynamic HTML content in web applications.
+- It provides a powerful and flexible way to generate HTML content from templates.
+- Example:
+```
+from flask import Flask, render_template
+app = Flask(__name__)
+@app.route('/')
+def home():
+    return render_template('index.html')
+if __name__ == '__main__':
+    app.run(debug=True)
 ```
 
 #### Important Notice:
