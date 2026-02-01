@@ -7,3 +7,4 @@ jupyter
 bs4
 flask
 streamlit
+scikit-learn
