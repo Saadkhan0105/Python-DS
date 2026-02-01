@@ -6,3 +6,4 @@ seaborn
 jupyter
 bs4
 flask
+streamlit
